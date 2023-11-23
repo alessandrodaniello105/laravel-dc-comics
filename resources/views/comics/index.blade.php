@@ -10,7 +10,7 @@
         <thead>
 
           <tr>
-            <th scope="col">ID</th>
+              <th scope="col">ID</th>
             <th scope="col">Titolo</th>
             <th scope="col">Prezzo di vendita</th>
             <th scope="col">Data di vendita</th>
@@ -21,10 +21,10 @@
         <tbody>
             @foreach ($comics as $comic)
             <tr>
+                <td>{{ $comic->id }}</td>
                 <td>{{ $comic->title }}</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{ $comic->price }}</td>
+                <td>{{ $comic->sale_date }}</td>
             </tr>
             @endforeach
 
