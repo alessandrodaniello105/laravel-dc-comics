@@ -13,8 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comics', function (Blueprint $table) {
+        Schema::create('dc_comics', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 50);
+            $table->string('slug', 51)->unique();
+            $table->text('description');
+            $table->string('thumb', 150);
+            $table->string('price', 7);
+            $table->string('series', 50);
+            $table->date('sale_date');
+            $table->string('type', 20);
+            $table->string('artists', 150);
+            $table->string('writers', 150);
             $table->timestamps();
         });
     }
