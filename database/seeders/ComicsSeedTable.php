@@ -20,10 +20,10 @@ class ComicsSeedTable extends Seeder
         foreach ($comics as $comic) {
 
             $new_comic = new Comic();
-            $new_comic->id ;
-            $new_comic->title ;
+            // $new_comic->id = $comic['id'];
+            $new_comic->title = $comic['title'];
             $new_comic->slug = Comic::generateSlug($new_comic->title);
-            $new_comic->description ;
+            $new_comic->description = $comic['description'];
             $new_comic->thumb = $comic['thumb'];
             $new_comic->price = $comic['price'];
             $new_comic->series = $comic['series'];
@@ -31,6 +31,7 @@ class ComicsSeedTable extends Seeder
             $new_comic->type = $comic['type'];
             // $new_comic->artists = $comic['artists'];
             // $new_comic->writers = $comic['writers'];
+            $new_comic->save();
         }
     }
 
