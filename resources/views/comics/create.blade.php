@@ -13,9 +13,9 @@
         {{-- /Titolo --}}
 
         {{-- description --}}
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" name="description">
+        <div class="mb-3 form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" style="height: 200px"></textarea>
+            <label for="description">Description</label>
         </div>
         {{-- /description --}}
 
