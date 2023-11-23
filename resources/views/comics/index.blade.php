@@ -10,11 +10,12 @@
         <thead>
 
           <tr>
-              <th scope="col">ID</th>
+            <th scope="col">ID</th>
             <th scope="col">Titolo</th>
             <th scope="col">Prezzo di vendita</th>
             <th scope="col">Data di vendita</th>
-          </tr>
+            <th scope="col">Azioni</th>
+        </tr>
 
         </thead>
 
@@ -25,6 +26,7 @@
                 <td>{{ $comic->title }}</td>
                 <td>{{ $comic->price }}</td>
                 <td>{{ $comic->sale_date }}</td>
+                <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a></td>
             </tr>
             @endforeach
 
