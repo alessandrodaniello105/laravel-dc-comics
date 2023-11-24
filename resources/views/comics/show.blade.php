@@ -2,15 +2,18 @@
 
 @section('content')
 
-<div class="container my-3">
-    <h1>{{$comic->title}}</h1>
-    <h3>Serie: {{$comic->series}}</h3>
+<div class="container my-3 p-2">
+    <div class="row p-2">
+    <h1>
+        {{$comic->title}} | <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning"> <i class="fa-solid fa-pencil"></i> </a>
+    </h1>
+        <h3>Serie: {{$comic->series}}</h3>
+    </div>
 
-    <div class="row">
-        <div class="col">
+    <div class="row p-2 ">
+
+        <div class="col-3">
             <img class="img-fluid" src="{{$comic->thumb}}" alt="{{$comic->title}}">
-
-
         </div>
 
         <div class="col">
@@ -32,7 +35,6 @@
 
             <a href="{{route('comics.index')}}" class="btn btn-secondary">Go back</a>
         </div>
-    </div>
 
 
 
