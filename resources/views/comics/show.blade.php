@@ -5,7 +5,11 @@
 <div class="container my-3 p-2">
     <div class="row p-2">
     <h1>
-        {{$comic->title}} | <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning"> <i class="fa-solid fa-pencil"></i> </a>
+        {{$comic->title}} |
+        <div class="actions-box d-inline-block">
+            <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning"> <i class="fa-solid fa-pencil"></i> </a>
+            @include('partials.deleteComic')
+        </div>
     </h1>
         <h3>Serie: {{$comic->series}}</h3>
     </div>
