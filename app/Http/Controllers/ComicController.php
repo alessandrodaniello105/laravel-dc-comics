@@ -38,17 +38,12 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
-        dump($form_data);
-
         $add_comic = new Comic();
-        $add_comic->title = $form_data['title'];
-        $add_comic->slug = Comic::generateSlug($form_data['title']);
-        $add_comic->description = $form_data['description'];
-        $add_comic->thumb = $form_data['thumb'];
-        $add_comic->price = $form_data['price'];
-        $add_comic->series = $form_data['series'];
-        $add_comic->sale_date = $form_data['sale_date'];
-        $add_comic->type = $form_data['type'];
+
+        $form_data['slug'] = Comic::generateSlug($form_data['title']);
+
+        $add_comic->fill($form_data);
+
         $add_comic->save();
 
         return redirect()->route('comics.show', $add_comic->slug);
@@ -86,7 +81,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        if($form_data['title'] === $comic->title){
+            $form_data['slug'] = $comic->slug;
+        }else {
+            $form_data['slug'] = Comic::generateSlug($form_data['title']);
+        }
+
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', $comic->slug);
     }
 
     /**

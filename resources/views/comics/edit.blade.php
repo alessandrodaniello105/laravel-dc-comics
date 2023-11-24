@@ -7,7 +7,7 @@
 
     <h1>Stai modificando: {{$comic->title}}</h1>
 
-    <form action="{{route('comics.store')}}" method="POST">
+    <form action="{{route('comics.update', $comic)}}" method="POST">
         @csrf
         @method('PUT')
 
