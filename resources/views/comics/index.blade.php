@@ -1,15 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+@include('comics.test-functions')
 
 <div class="container my-3">
     <h1>Fumetti venduti</h1>
 
     @if(Session::has('success'))
-    {{-- @php
 
-        deleteMsgTimeout();
-    @endphp --}}
     <div id="delete_msg" class="alert alert-success" role="alert">
         {{Session::get('success')}}
     </div>
