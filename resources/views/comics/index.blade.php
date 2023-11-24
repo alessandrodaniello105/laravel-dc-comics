@@ -5,6 +5,16 @@
 <div class="container my-3">
     <h1>Fumetti venduti</h1>
 
+    @if(Session::has('success'))
+    {{-- @php
+
+        deleteMsgTimeout();
+    @endphp --}}
+    <div id="delete_msg" class="alert alert-success" role="alert">
+        {{Session::get('success')}}
+    </div>
+    @endif
+
 
     <table class="table">
         <thead>
